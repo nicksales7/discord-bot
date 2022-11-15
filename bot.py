@@ -1,9 +1,16 @@
 import hikari
 import lightbulb 
-import randfacts
+from dotenv import load_dotenv
+import json
+
+with open('config.json') as f:
+    data = json.load(f)
+    token = data["TOKEN"]
+    prefix = data["PREFIX"]
+
 
 bot = lightbulb.BotApp(
-    token="MTA0MTQ3NjkwNzE0Mjc0NjIwMw.Gw4_PH.ObUSRjQ3kQUe_DmyWOv2NGYUmpuJVf03_8R6Sw", 
+    token=token, 
     default_enabled_guilds=(1026561071911288932))
     
 @bot.listen(hikari.StartedEvent) #Indicates bot has started in terminal

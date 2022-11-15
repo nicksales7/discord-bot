@@ -2,6 +2,7 @@ import lightbulb
 import hikari
 import randfacts
 
+
 plugin = lightbulb.Plugin('Facts!')
 
 @plugin.listener(hikari.GuildMessageCreateEvent)
